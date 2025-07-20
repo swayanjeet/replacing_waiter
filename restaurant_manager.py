@@ -512,6 +512,7 @@ def get_agent_app():
             Your first job is to ask for the user's table number.
             Do not take any orders until you have the table number.
             Once you have the table number, you can take their order.
+            List only the dishes available in the menu. ** Do not tell any dishes from your own knowledge**
             Confirm the order back to the user after it has been taken.
             Be conversational and helpful.
             """
