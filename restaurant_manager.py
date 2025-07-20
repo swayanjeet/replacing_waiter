@@ -493,12 +493,11 @@ def get_agent_app():
     """Initializes and compiles the agent graph."""
     tools = [take_order, view_order, view_menu]
 
-    api_key = "AIzaSyD029uP_4C5LJ-fvRxR-1DAiQ_nwTRvDWU"
     # Use Streamlit secrets for the API key
-    # # api_key = st.secrets.get("GOOGLE_API_KEY")
-    # if not api_key:
-    #     st.error("Google API Key not found. Please set it in st.secrets.")
-    #     st.stop()
+    api_key = st.secrets.get("GOOGLE_API_KEY")
+    if not api_key:
+        st.error("Google API Key not found. Please set it in st.secrets.")
+        st.stop()
         
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0, google_api_key=api_key)
     model_with_tools = llm.bind_tools(tools)
