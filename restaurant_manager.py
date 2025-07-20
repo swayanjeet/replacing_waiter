@@ -489,6 +489,8 @@ import os
 #     # Update the state for the next turn
 #     state = result
 
+import streamlit as st
+
 def get_agent_app():
     """Initializes and compiles the agent graph."""
     tools = [take_order, view_order, view_menu]
@@ -533,7 +535,6 @@ def get_agent_app():
 
 app = get_agent_app()
 
-import streamlit as st
 # --- Streamlit UI ---
 
 # st.set_page_config(page_title="Waiter Agent 🍽️", layout="wide")
